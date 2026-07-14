@@ -314,7 +314,7 @@ public class MessagesManager {
         String raw = getRaw(langCode, key);
 
         for (Map.Entry<String, String> entry : placeholders.entrySet()) {
-            raw = raw.replace("%" + entry.getKey() + "%", entry.getValue());
+            raw = raw.replace(entry.getKey(), entry.getValue());
         }
 
         return miniMessage.deserialize(raw);
