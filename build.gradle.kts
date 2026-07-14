@@ -1,0 +1,29 @@
+plugins {
+    id("java-library")
+    id("xyz.jpenilla.run-velocity") version "3.0.2"
+}
+
+repositories {
+    mavenCentral()
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:3.5.0-SNAPSHOT")
+    annotationProcessor("com.velocitypowered:velocity-api:3.5.0-SNAPSHOT")
+    implementation("org.yaml:snakeyaml:2.2")
+    implementation("net.kyori:adventure-text-minimessage:4.17.0")
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+tasks {
+    runVelocity {
+        // Configure the Velocity version for our task.
+        // This is the only required configuration besides applying the plugin.
+        // Your plugin's jar (or shadowJar if present) will be used automatically.
+        velocityVersion("3.5.0-SNAPSHOT")
+    }
+}
