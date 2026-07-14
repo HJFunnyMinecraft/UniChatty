@@ -1,4 +1,4 @@
-package com.codezhangborui.uniChatty;
+package com.codezhangborui.uniChatty.managers;
 
 import org.slf4j.Logger;
 import org.yaml.snakeyaml.DumperOptions;
@@ -50,6 +50,11 @@ public class ConfigManager {
                 "chat.ignore",
                 List.of("server1", "server2"),
                 "List of servers that needn't relay messages."
+        );
+        addDefault(
+                "connectors.luckperms",
+                false,
+                "Should we get player's prefix from LuckPerms?"
         );
         addDefault(
                 "join-leave-server-broadcast.enable",

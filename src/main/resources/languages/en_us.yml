@@ -1,4 +1,6 @@
 no-permission: "<red>You do not have permission to use this command.</red>"
+started-successfully: "<green><bold>UniChatty has started successfully!</bold></green>"
+luckperms-connected: "<blue><bold>LuckPerms connected!</bold></blue>"
 ban-words-message: "<red>Your message contains banned words and cannot be sent.</red>"
 # Available placeholders: %player%, %message%
 ban-words-console: "<red>Player %player% tried to send a message containing banned words: %message%</red>"

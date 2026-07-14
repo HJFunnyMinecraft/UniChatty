@@ -13,6 +13,8 @@ dependencies {
     annotationProcessor("com.velocitypowered:velocity-api:3.5.0-SNAPSHOT")
     implementation("org.yaml:snakeyaml:2.2")
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
+    implementation("net.kyori:adventure-text-logger-slf4j:4.23.0")
+    compileOnly("net.luckperms:api:5.4")
 }
 
 java {

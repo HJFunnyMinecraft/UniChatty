@@ -1,4 +1,4 @@
-package com.codezhangborui.uniChatty;
+package com.codezhangborui.uniChatty.managers;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -166,37 +166,14 @@ public class MessagesManager {
     }
 
     private static void createDefaultLanguageFile(String langCode) throws IOException {
+        // 创建空的语言文件，实际内容会通过 ensureAllKeysExist 从 resources 补充
         Path langFile = messagesDirectory.resolve(langCode + ".yml");
         
         Map<String, Object> messages = new LinkedHashMap<>();
-        Map<String, String> comments = new LinkedHashMap<>();
-
-        messages.put(
-                "no-permission",
-                "<red>You do not have permission to use this command.</red>"
-        );
-        messages.put(
-                "ban-words-message",
-                "<red>Your message contains banned words and cannot be sent.</red>"
-        );
-        messages.put(
-                "ban-words-console",
-                "<red>Player %player% tried to send a message containing banned words: %message%</red>"
-        );
-        messages.put(
-                "msg-to",
-                "[<red>Message</red>] <dark_green>You</dark_green> <gray>-></gray> %player% <dark_gray>:</dark_gray> %message%"
-        );
-        comments.put(
-                "msg-to",
-                "Available placeholders: %player%, %message%"
-        );
-
         loadedLanguages.put(langCode, messages);
-        languageComments.put(langCode, comments);
 
         saveLanguageFile(langCode);
-        logger.info("Default language file created: {}", langCode);
+        logger.info("Empty language file created, will be populated with default keys: {}", langCode);
     }
 
     private static void saveLanguageFile(String langCode) throws IOException {

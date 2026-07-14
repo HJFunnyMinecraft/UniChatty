@@ -1,4 +1,6 @@
 no-permission: "<red>你没有权限执行此命令！</red>"
+started-successfully: "<green><bold>UniChatty 已成功启动！</bold></green>"
+luckperms-connected: "<blue><bold>LuckPerms 已连接！</bold></blue>"
 ban-words-message: "<red>你的消息包含被禁止的词语，无法发送。</red>"
 # Available placeholders: %player$, $message%
 ban-words-console: "<red>玩家 %player% 试图发送包含被禁止的词语的消息: %message%</red>"
