@@ -42,7 +42,7 @@ public class ConfigManager {
         );
         addDefault(
                 "chat.format",
-                "<aqua><bold>[%server%]</bold></aqua> %prefix%<%player%> %message%",
+                "<aqua><bold>[%server%]</bold></aqua> %prefix%\\<%player%\\> %message%",
                 "Chat message format with player name and message placeholders.\n" +
                         "Available placeholders: %server%, %player%, %prefix%, %message%"
         );
