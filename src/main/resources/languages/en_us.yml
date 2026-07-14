@@ -1,0 +1,6 @@
+no-permission: "<red>You do not have permission to use this command.</red>"
+ban-words-message: "<red>Your message contains banned words and cannot be sent.</red>"
+# Available placeholders: %player%, %message%
+ban-words-console: "<red>Player %player% tried to send a message containing banned words: %message%</red>"
+# Available placeholders: %player%, %message%
+msg-to: "[<red>Message</red>] <dark_green>You</dark_green> <gray>-></gray> %player% <dark_gray>:</dark_gray> %message%"
