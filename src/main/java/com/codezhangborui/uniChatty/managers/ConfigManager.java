@@ -38,7 +38,7 @@ public class ConfigManager {
         addDefault(
                 "language",
                 "en_us",
-                "Available launguages: en_us, zh_cn"
+                "Available languages: en_us, zh_cn"
         );
         addDefault(
                 "chat.format",
