@@ -1,6 +1,7 @@
 package com.codezhangborui.uniChatty;
 
 import com.codezhangborui.uniChatty.commands.MentionCommand;
+import com.codezhangborui.uniChatty.commands.UniChattyCommand;
 import com.codezhangborui.uniChatty.connectors.LuckPermsConnector;
 import com.codezhangborui.uniChatty.events.PlayerChatHandler;
 import com.codezhangborui.uniChatty.managers.ConfigManager;
@@ -42,10 +43,15 @@ public class UniChatty {
         MessagesManager.setLanguage(ConfigManager.getString("language"));
         server.getEventManager().register(this, new PlayerChatHandler(server, logger));
         CommandMeta mentionMeta = server.getCommandManager()
-            .metaBuilder("@")
-            .plugin(this)
-            .build();
+                .metaBuilder("@")
+                .plugin(this)
+                .build();
         server.getCommandManager().register(mentionMeta, new MentionCommand(server, logger));
+        CommandMeta unichattyMeta = server.getCommandManager()
+                .metaBuilder("unichatty")
+                .plugin(this)
+                .build();
+        server.getCommandManager().register(unichattyMeta, new UniChattyCommand(server, logger));
         if(ConfigManager.getBoolean("connectors.luckperms")) {
             LuckPermsConnector.load(logger);
         }

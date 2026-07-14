@@ -1,12 +1,13 @@
 no-permission: "<red>你没有权限执行此命令！</red>"
 only-player: "<red>这个指令只能由玩家执行！</red>"
 started-successfully: "<green><bold>UniChatty 已成功启动！</bold></green>"
-luckperms-connected: "<blue><bold>LuckPerms 已连接！</bold></blue>"
+luckperms-connected: "<aqua><bold>LuckPerms 已连接！</bold></aqua>"
 ban-words-message: "<red>你的消息包含被禁止的词语，无法发送。</red>"
 # Available placeholders: %player$, $message%
 ban-words-console: "<red>玩家 %player% 试图发送包含被禁止的词语的消息: %message%</red>"
-# Available placeholders: %player%
-mention-usage: "<yellow>用法: /@<玩家名> <消息></yellow>"
+unichatty-usage: "<yellow>用法：/unichatty [reload]"
+reload-success: "<green>所有配置和消息已成功重载！</green>"
+mention-usage: "<yellow>用法：/@<玩家名> <消息></yellow>"
 # Available placeholders: %player%
 mention-player-not-found: "<red>玩家 %player% 不在线！</red>"
 mention-no-message: "<red>请输入要发送的消息！</red>"
