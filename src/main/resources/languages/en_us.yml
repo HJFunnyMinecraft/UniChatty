@@ -1,8 +1,18 @@
 no-permission: "<red>You do not have permission to use this command.</red>"
+only-player: "<red>This command can only be used by a player!</red>"
 started-successfully: "<green><bold>UniChatty has started successfully!</bold></green>"
 luckperms-connected: "<blue><bold>LuckPerms connected!</bold></blue>"
 ban-words-message: "<red>Your message contains banned words and cannot be sent.</red>"
 # Available placeholders: %player%, %message%
 ban-words-console: "<red>Player %player% tried to send a message containing banned words: %message%</red>"
+# Available placeholders: %player%
+mention-usage: "<yellow>Usage: /@<player> <message></yellow>"
+# Available placeholders: %player%
+mention-player-not-found: "<red>Player %player% is not online!</red>"
+mention-no-message: "<red>Please enter a message to send!</red>"
+# Available placeholders: %player%, %message%
+mention-sent: "[<gold>@</gold>] <dark_green>You</dark_green> <gray>-></gray> <yellow>%player%</yellow> <dark_gray>:</dark_gray> %message%"
+# Available placeholders: %sender%, %message%
+mention-receive: "[<gold>@</gold>] <yellow>%sender%</yellow> <gray>mentioned you:</gray> %message%"
 # Available placeholders: %player%, %message%
 msg-to: "[<red>Message</red>] <dark_green>You</dark_green> <gray>-></gray> %player% <dark_gray>:</dark_gray> %message%"

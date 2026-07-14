@@ -97,6 +97,11 @@ public class ConfigManager {
                 "this-is-your-banned-word-1,this-is-your-banned-word-2",
                 ""
         );
+        addDefault(
+                "mention.enable",
+                true,
+                "The mention command (/@)"
+        );
     }
 
     private static void addDefault(String key, Object value, String comment) {
