@@ -4,6 +4,7 @@ import com.codezhangborui.uniChatty.commands.MentionCommand;
 import com.codezhangborui.uniChatty.commands.UniChattyCommand;
 import com.codezhangborui.uniChatty.connectors.LuckPermsConnector;
 import com.codezhangborui.uniChatty.events.PlayerChatHandler;
+import com.codezhangborui.uniChatty.events.PlayerConnectionHandler;
 import com.codezhangborui.uniChatty.managers.ConfigManager;
 import com.codezhangborui.uniChatty.managers.MessagesManager;
 import com.google.inject.Inject;
@@ -42,6 +43,7 @@ public class UniChatty {
         MessagesManager.loadLanguage(ConfigManager.getString("language"));
         MessagesManager.setLanguage(ConfigManager.getString("language"));
         server.getEventManager().register(this, new PlayerChatHandler(server, logger));
+        server.getEventManager().register(this, new PlayerConnectionHandler(server, logger));
         CommandMeta mentionMeta = server.getCommandManager()
                 .metaBuilder("@")
                 .plugin(this)

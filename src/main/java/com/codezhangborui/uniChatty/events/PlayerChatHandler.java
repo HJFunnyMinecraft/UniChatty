@@ -12,7 +12,6 @@ import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 
 import java.util.Map;
-import java.util.UUID;
 
 public class PlayerChatHandler {
     private ComponentLogger logger;
@@ -38,7 +37,6 @@ public class PlayerChatHandler {
     public void onPlayerChat(PlayerChatEvent event) {
         String message = event.getMessage();
         Player source = event.getPlayer();
-        UUID sourceUUID = source.getUniqueId();
         if(ConfigManager.getBoolean("ban-words.enable")) {
             if (hasBannedWords(message)) {
                 // event.setResult(PlayerChatEvent.ChatResult.denied());
