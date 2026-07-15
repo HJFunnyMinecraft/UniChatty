@@ -2,10 +2,13 @@ package com.codezhangborui.uniChatty.commands;
 
 import com.codezhangborui.uniChatty.managers.ConfigManager;
 import com.codezhangborui.uniChatty.managers.MessagesManager;
+import com.codezhangborui.uniChatty.managers.PlayerManager;
 import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,28 +45,26 @@ public class MentionCommand implements SimpleCommand {
             return;
         }
         StringBuilder messageBuilder = new StringBuilder();
-        for (int i = 1; i < args.length; i++) {
-            messageBuilder.append(args[i]);
-            if (i < args.length - 1) {
+        messageBuilder.append("<light_purple><bold>@");
+        messageBuilder.append(targetPlayerName);
+        messageBuilder.append("</bold></light_purple>");
+        if(args.length > 1) {
+            for (int i = 1; i < args.length; i++) {
                 messageBuilder.append(" ");
+                messageBuilder.append(args[i]);
             }
         }
+        String playerPrefix = PlayerManager.getPlayerPrefix(sender);
         String message = messageBuilder.toString();
-        if (message.isEmpty()) {
-            sender.sendMessage(MessagesManager.get("mention-no-message"));
-            return;
-        }
-        logger.info(MessagesManager.get("mention-receive", Map.of(
-                "%sender%", sender.getUsername(),
-                "%message%", message
-        )));
+        Component finalMessage = MiniMessage.miniMessage().deserialize(ConfigManager.getString("chat.format")
+                .replace("%player%", sender.getUsername())
+                .replace("%server%", sender.getCurrentServer().get().getServerInfo().getName())
+                .replace("%message%", message)
+                .replace("%prefix%", playerPrefix == null ? "" : playerPrefix));
+        server.getAllPlayers().forEach(player -> player.sendMessage(finalMessage));
+        logger.info(finalMessage);
         targetPlayer.sendMessage(MessagesManager.get("mention-receive", Map.of(
-                "%sender%", sender.getUsername(),
-                "%message%", message
-        )));
-        sender.sendMessage(MessagesManager.get("mention-sent", Map.of(
-                "%player%", targetPlayer.getUsername(),
-                "%message%", message
+                "%sender%", sender.getUsername()
         )));
     }
 

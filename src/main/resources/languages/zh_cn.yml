@@ -2,18 +2,21 @@ no-permission: "<red>你没有权限执行此命令！</red>"
 only-player: "<red>这个指令只能由玩家执行！</red>"
 started-successfully: "<green><bold>UniChatty 已成功启动！</bold></green>"
 luckperms-connected: "<aqua><bold>LuckPerms 已连接！</bold></aqua>"
+plugin-usage: |
+    <yellow>UniChatty 指令:</yellow>
+    <light_purple>/uctell [玩家] [消息]</light_purple> - <white>向其他玩家发送私信。</white>
+    <light_purple>/@ [玩家] [消息]</light_purple> - <white>提及其他玩家（可选附带消息）。</white>
+    <light_purple>/unichatty help</light_purple> - <white>显示此帮助信息。</white>
 ban-words-message: "<red>你的消息包含被禁止的词语，无法发送。</red>"
 # Available placeholders: %player$, $message%
 ban-words-console: "<red>玩家 %player% 试图发送包含被禁止的词语的消息: %message%</red>"
-unichatty-usage: "<yellow>用法：/unichatty [reload]"
+unichatty-cmd-usage: "<yellow>用法：/unichatty [reload|help]</yellow>"
 reload-success: "<green>所有配置和消息已成功重载！</green>"
 mention-usage: "<yellow>用法：/@<玩家名> <消息></yellow>"
 # Available placeholders: %player%
 mention-player-not-found: "<red>玩家 %player% 不在线！</red>"
 mention-no-message: "<red>请输入要发送的消息！</red>"
-# Available placeholders: %player%, %message%
-mention-sent: "[<gold>@</gold>] <dark_green>你</dark_green> <gray>-></gray> <yellow>%player%</yellow> <dark_gray>:</dark_gray> %message%"
-# Available placeholders: %sender%, %message%
-mention-receive: "[<gold>@</gold>] <yellow>%sender%</yellow> <gray>提到了你:</gray> %message%"
+# Available placeholders: %sender%
+mention-receive: "[<gold>@</gold>] <yellow>%sender%</yellow> <gray>刚刚提及到了你！</gray>"
 # Available placeholders: %player%, %message%
 msg-to: "[<red>私信</red>] <dark_green>你</dark_green> <gray>-></gray> %player% <dark_gray>:</dark_gray> %message%"
