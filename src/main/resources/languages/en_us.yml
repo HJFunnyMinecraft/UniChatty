@@ -2,20 +2,21 @@ no-permission: "<red>You do not have permission to use this command.</red>"
 only-player: "<red>This command can only be used by a player!</red>"
 started-successfully: "<green><bold>UniChatty has started successfully!</bold></green>"
 luckperms-connected: "<aqua><bold>LuckPerms connected!</bold></aqua>"
-plugin-usage: |
-    <yellow>UniChatty Commands:</yellow>
-    <light_purple>/uctell [Player] [Message]</light_purple> - <white>Send private message to another player.</white>
-    <light_purple>/@ [Player] [Message]</light_purple> - <white>Mention another player (and optionally with a message).</white>
-    <light_purple>/unichatty help</light_purple> - <white>Displays this help message.</white>
+plugin-usage: |-
+  <yellow>UniChatty Commands:</yellow>
+  <light_purple>/uctell [Player] [Message]</light_purple> - <white>Send private message to another player.</white>
+  <light_purple>/@ [Player] [Message]</light_purple> - <white>Mention another player (and optionally with a message).</white>
+  <light_purple>/unichatty help</light_purple> - <white>Displays this help message.</white>
+# Available placeholders: %player%
+player-not-found: "<red>Player %player% is not online!</red>"
 ban-words-message: "<red>Your message contains banned words and cannot be sent.</red>"
 # Available placeholders: %player%, %message%
 ban-words-console: "<red>Player %player% tried to send a message containing banned words: %message%</red>"
 unichatty-cmd-usage: "<yellow>Usage: /unichatty [reload|help]</yellow>"
 reload-success: "<green>All configuration and messages have been reloaded successfully!</green>"
 mention-usage: "<yellow>Usage: /@ <player> <message></yellow>"
-# Available placeholders: %player%
-mention-player-not-found: "<red>Player %player% is not online!</red>"
 # Available placeholders: %sender%
 mention-receive: "[<gold>@</gold>] <yellow>%sender%</yellow> <gray>had just mentioned you!</gray>"
-# Available placeholders: %player%, %message%
-msg-to: "[<red>Message</red>] <dark_green>You</dark_green> <gray>-></gray> %player% <dark_gray>:</dark_gray> %message%"
+uctell-usage: "<yellow>Usage: /uctell <player> <message></yellow>"
+# Available placeholders: %player_from%, %player_to%, %message%
+uctell-to: "[<red>Message</red>] <dark_green>%player_from%</dark_green> <gray>-></gray> %player_to% <dark_gray>:</dark_gray> %message%"

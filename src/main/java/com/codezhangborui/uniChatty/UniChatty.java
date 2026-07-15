@@ -1,6 +1,7 @@
 package com.codezhangborui.uniChatty;
 
 import com.codezhangborui.uniChatty.commands.MentionCommand;
+import com.codezhangborui.uniChatty.commands.UcTellCommand;
 import com.codezhangborui.uniChatty.commands.UniChattyCommand;
 import com.codezhangborui.uniChatty.connectors.LuckPermsConnector;
 import com.codezhangborui.uniChatty.events.PlayerChatHandler;
@@ -49,6 +50,12 @@ public class UniChatty {
                 .plugin(this)
                 .build();
         server.getCommandManager().register(mentionMeta, new MentionCommand(server, logger));
+        CommandMeta uctellMeta = server.getCommandManager()
+                .metaBuilder("uctell")
+                .aliases("vctell", "ucmsg", "vcmsg")
+                .plugin(this)
+                .build();
+        server.getCommandManager().register(uctellMeta, new UcTellCommand(server, logger));
         CommandMeta unichattyMeta = server.getCommandManager()
                 .metaBuilder("unichatty")
                 .plugin(this)

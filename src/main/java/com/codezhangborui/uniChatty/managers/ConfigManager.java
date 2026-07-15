@@ -102,6 +102,11 @@ public class ConfigManager {
                 true,
                 "The mention command (/@)"
         );
+        addDefault(
+                "privatemsg.enable",
+                true,
+                "The private message command (/uctell)"
+        );
     }
 
     private static void addDefault(String key, Object value, String comment) {
